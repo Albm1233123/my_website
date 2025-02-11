@@ -68,7 +68,7 @@ export default function Education() {
             High School Diploma
           </Typography>
           <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.7)", marginTop: "5px" }}>
-            Graduated: 2022
+            Graduated: 2021
           </Typography>
         </motion.div>
       </Box>
