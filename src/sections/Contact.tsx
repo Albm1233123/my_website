@@ -18,11 +18,11 @@ export default function Contact() {
             <Email /> albrentmanlutac@gmail.com
           </Link>
           
-          <Link href="https://linkedin.com/in/yourprofile" target="_blank" color="primary" underline="none" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Link href="https://github.com/Albm1233123" target="_blank" color="primary" underline="none" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <LinkedIn /> LinkedIn
           </Link>
 
-          <Link href="https://github.com/yourgithub" target="_blank" color="primary" underline="none" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Link href="https://www.linkedin.com/in/alloysius-manlutac-7685782b9/" target="_blank" color="primary" underline="none" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <GitHub /> GitHub
           </Link>
         </Box>
