@@ -36,10 +36,10 @@ export default function Education() {
             Bachelor of Computer and Information Sciences
           </Typography>
           <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.83)" }}>
-            [Major Software Development]
+            [Major Software Development] [Minor Artificial Intelligence]
           </Typography>
           <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.7)", marginTop: "5px" }}>
-            Expected Graduation: 2025 (One Semester Left)
+            Graduated: August 7th 2025 
           </Typography>
         </motion.div>
 

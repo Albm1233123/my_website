@@ -9,7 +9,7 @@ export default function About() {
           About Me
         </Typography>
         <Typography variant="body1" sx={{ maxWidth: "600px", margin: "0 auto" }}>
-          Enthusiastic third-year Computer Science student seeking internship, graduate, and entry-level opportunities. Passionate about software development and eager to contribute to dynamic teams while expanding my knowledge.
+          I’m a recent Computer Science graduate passionate about software development. I’m eager to apply my skills and contribute to innovative projects in graduate or entry-level roles, while continuing to grow professionally and collaborate with dynamic teams.
         </Typography>
       </SlideIn>
     </Container>
