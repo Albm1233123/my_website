@@ -3,74 +3,56 @@ import { motion } from "framer-motion";
 
 export default function Education() {
   return (
-    <Container className="glass-container" id="education" sx={{ padding: "100px 0", textAlign: "center" }}>
-      <Typography variant="h3" sx={{ marginBottom: 4, fontWeight: "bold", letterSpacing: 1 }}>
+    <Container id="education" sx={{ padding: "120px 0", backgroundColor: "#F7F4EF" }}>
+      <Typography variant="overline" sx={{ fontSize: "1rem", letterSpacing: "0.15em", color: "#78716C", display: "block", mb: 3 }}>
         Education
       </Typography>
+      <Typography variant="h4" sx={{ fontWeight: 600, color: "#1C1917", mb: 6 }}>
+        Where I've studied.
+      </Typography>
 
-      <Box sx={{ position: "relative", maxWidth: "600px", margin: "0 auto" }}>
-
-        {/* University */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          style={{
-            background: "rgba(255, 255, 255, 0.1)",
-            padding: "20px",
-            borderRadius: "10px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            backdropFilter: "blur(10px)",
-            textAlign: "left",
-            position: "relative",
-            marginBottom: "40px",
-            width: "calc(100% - 50px)",
-            left: "-25px",
-          }}
-        >
-          <Typography variant="h5" sx={{ color: "#ffffff", fontWeight: "600", marginBottom: "10px" }}>
-            Auckland University of Technology
-          </Typography>
-          <Typography variant="body1" sx={{ color: "#ffffff" }}>
-            Bachelor of Computer and Information Sciences
-          </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.83)" }}>
-            [Major Software Development] [Minor Artificial Intelligence]
-          </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.7)", marginTop: "5px" }}>
-            Graduated: August 7th 2025 
-          </Typography>
-        </motion.div>
-
-        {/* High School */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-          style={{
-            background: "rgba(255, 255, 255, 0.1)",
-            padding: "20px",
-            borderRadius: "10px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            backdropFilter: "blur(10px)",
-            textAlign: "left",
-            position: "relative",
-            width: "calc(100% - 50px)",
-            left: "25px",
-          }}
-        >
-          <Typography variant="h5" sx={{ color: "#ffffff", fontWeight: "600", marginBottom: "10px" }}>
-            Sacred Heart College
-          </Typography>
-          <Typography variant="body1" sx={{ color: "#ffffff" }}>
-            High School Diploma
-          </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.7)", marginTop: "5px" }}>
-            Graduated: 2021
-          </Typography>
-        </motion.div>
+      <Box sx={{ maxWidth: "560px", display: "flex", flexDirection: "column", gap: 3 }}>
+        {[
+          {
+            school: "Auckland University of Technology",
+            degree: "Bachelor of Computer and Information Sciences",
+            detail: "Major: Software Development · Minor: Artificial Intelligence",
+            date: "Graduated August 2025",
+            delay: 0,
+          },
+          {
+            school: "Sacred Heart College",
+            degree: "High School Diploma",
+            detail: null,
+            date: "Graduated 2021",
+            delay: 0.15,
+          },
+        ].map((item) => (
+          <motion.div
+            key={item.school}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: item.delay }}
+            viewport={{ once: true }}
+          >
+            <Box sx={{ borderLeft: "2px solid #DDD8D0", pl: 3, py: 0.5, "&:hover": { borderLeftColor: "#A0522D", transition: "border-color 0.2s" } }}>
+              <Typography sx={{ fontWeight: 600, fontSize: "1rem", color: "#1C1917", mb: 0.5 }}>
+                {item.school}
+              </Typography>
+              <Typography sx={{ fontSize: "0.9rem", color: "#44403C", mb: 0.5 }}>
+                {item.degree}
+              </Typography>
+              {item.detail && (
+                <Typography sx={{ fontSize: "0.8rem", color: "#78716C", mb: 0.5 }}>
+                  {item.detail}
+                </Typography>
+              )}
+              <Typography sx={{ fontSize: "0.75rem", color: "#A8A29E", letterSpacing: "0.05em" }}>
+                {item.date}
+              </Typography>
+            </Box>
+          </motion.div>
+        ))}
       </Box>
     </Container>
   );

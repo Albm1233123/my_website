@@ -1,40 +1,61 @@
-import { Container, Typography, Grid, Chip } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { motion } from "framer-motion";
 
 const skills = {
-  "Main Programming Language": ["Java"],
-  "Familiar Languages": ["Python", "JavaScript", "PHP", "HTML", "CSS", "SQL", "C#", "C++"],
-  "Web Development": ["MongoDB", "NestJS", "Node.js", "Next.js", "React"],
-  "Tools & Technologies": ["Git", "GitHub", "Visual Studio Code", "Visual Studio", "Eclipse", "NetBeans", "PyCharm", "Unity"],
-  "Design & Project Management": ["Figma", "Trello", "Miro", "Jira"],
-  "Soft Skills": ["Team collaboration", "Effective communication", "Problem-solving", "Time management", "Adaptability"],
+  "Built projects with": ["Java", "React", "TypeScript", "Node.js", "NestJS", "Next.js", "MongoDB", "MySQL", "C#", "Unity", "HTML", "CSS"],
+  "Exposed through coursework": ["Python", "C++", "PHP", "SQL"],
+  "Tools": ["Git", "GitHub", "VS Code", "Visual Studio", "Eclipse", "PyCharm", "Figma"],
+  "Planning & PM": ["Trello", "Miro", "Jira", "Scrum", "Agile"],
 };
 
 export default function Skills() {
   return (
-    <Container className="glass-container" id="skills" sx={{ padding: "100px 0", textAlign: "center" }}>
-      <Typography variant="h3" sx={{ marginBottom: 4 }}>Skills</Typography>
-      <Grid container spacing={4} justifyContent="center">
+    <Container id="skills" sx={{ padding: "120px 0" }}>
+      <Typography variant="overline" sx={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "#78716C", display: "block", mb: 3 }}>
+        Skills
+      </Typography>
+      <Typography variant="h4" sx={{ fontWeight: 600, color: "#1C1917", mb: 1 }}>
+        What I work with.
+      </Typography>
+      <Typography sx={{ fontSize: "0.9rem", color: "#78716C", mb: 6, maxWidth: "480px" }}>
+        Java is my main language. Most of my project work has been full-stack web and game dev.
+      </Typography>
+
+      <Box sx={{ maxWidth: "640px", display: "flex", flexDirection: "column", gap: 4 }}>
         {Object.entries(skills).map(([category, items], index) => (
-          <Grid item key={index} xs={12} sm={6} md={4}>
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            key={index}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.8 }} 
+            transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.07 }}
+            viewport={{ once: true }}
           >
-              <Typography variant="h5" color="white">{category}</Typography>
-              <Grid container spacing={1} mt={2} justifyContent="center">
+            <Box sx={{ display: "flex", gap: { xs: 0, sm: 4 }, flexDirection: { xs: "column", sm: "row" }, alignItems: { sm: "baseline" } }}>
+              <Typography sx={{ fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#A0522D", minWidth: "160px", mb: { xs: 1, sm: 0 } }}>
+                {category}
+              </Typography>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75 }}>
                 {items.map((skill, i) => (
-                  <Grid item key={i}>
-                    <Chip label={skill} variant="outlined" sx={{ color: "white", borderColor: "gray" }} />
-                  </Grid>
+                  <Box
+                    key={i}
+                    sx={{
+                      px: 1.25,
+                      py: 0.35,
+                      border: "1px solid #DDD8D0",
+                      borderRadius: "4px",
+                      fontSize: "0.8rem",
+                      color: "#44403C",
+                      backgroundColor: "#EFEAE2",
+                    }}
+                  >
+                    {skill}
+                  </Box>
                 ))}
-              </Grid>
-            </motion.div>
-          </Grid>
+              </Box>
+            </Box>
+          </motion.div>
         ))}
-      </Grid>
+      </Box>
     </Container>
   );
 }
